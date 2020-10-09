@@ -3,7 +3,7 @@ import React from "react";
 const SingleProductPage = (props) => {
     return (
         <div>
-            <h3>{/*product title */}</h3>
+            <h3>SINGLE PRODUCT PAGE</h3>
             <img src="/*img*/" />
             <p>{/*desc*/}</p>
             <p> {/* stock */}</p>

@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ProductCard from '../../components/ProductCard'
 import db from '../../firebaseConfig'
 import * as bootstrap from 'react-bootstrap';
-import { Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import SingleProductPage from "../SingleProductPage/SingleProductPage"
+
 
 
 const Products = ({ match, products, setProducts, id, setId }) => {
@@ -13,13 +11,7 @@ const Products = ({ match, products, setProducts, id, setId }) => {
         console.log("Product like")
     }
 
-    const productDetails = (e) => {
-        setId("1")
-        console.log(id)
-        // producttan id yi çıkarıp, id stateini değiştirip sonrasında  redirect yapmamız lazım
-        //https://miro.medium.com/max/1000/1*k5cFNuvc2IDcg5BnrvWJGw.png 
-        // single product page props ayarlanmadı
-    }
+
 
 
     const addToCart = () => {
@@ -29,7 +21,7 @@ const Products = ({ match, products, setProducts, id, setId }) => {
     const productLister = () => {
         return products.map((product, index) => {
             return <bootstrap.Col>
-                {/* <Link key={index} to={`/products/${index}`}> */}
+
                 <ProductCard
                     key={product.id}
                     name={product.name}
@@ -38,11 +30,10 @@ const Products = ({ match, products, setProducts, id, setId }) => {
                     image={product.image}
                     stock={product.stock}
                     likeProduct={likeProduct}
-                    details={productDetails}
                     addToCart={addToCart}
                     numLike={product.numLike}
                     id={product.id} />
-                {/* </Link> */}
+
             </bootstrap.Col>
         })
     }
